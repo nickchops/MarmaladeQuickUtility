@@ -15,13 +15,16 @@ Quick missing key codes
 -----------------------
 
 I've also added defines for keys from Marmalade's s3eKey API that are missing
-from quick/include/QKeys.h in Marmlade 7.4.3 at least.
+from quick/include/QKeys.h in Marmlade 7.4.3 at least. The codes match the ones
+in teh C++ s3eKeyboard API
+(see http://api.madewithmarmalade.com/group__keyboardapigroup.html)
 
 To use them either:
-- Put LazyExtraKeys.lua in your resources folder and add dofile("LazyExtraKeys.lua") or require("LazyExtraKeys") to your code
-- Just use the numbers! You can just use the numbers in your code without
-  rebuilding Quick. e.g. just do things like "if myKey == 200 then" since
-  you can see from QExtraKeys.h that 200 is meant to be absGameA.     
+- Put LazyExtraKeys.lua in your resources folder and add
+  dofile("LazyExtraKeys.lua") or require("LazyExtraKeys") to your code
+- Just use the numbers! You can just use the key codes from QExtraKeys.h
+  directly in your Lua code. e.g. just do things like "if myKey == 200 then"
+  since you can see from QExtraKeys.h that 200 is meant to be absGameA.     
 - Recommended: build the header into the engine as described below...
 
   
@@ -31,7 +34,7 @@ To use them either:
 
 2. Edit quick/quickuser.mkf and add the following to the 'files' block:
 
-        quickuser/QExtraKeys.h
+        full/path/to/QExtraKeys.h
    
 3. Run quick/quickuser_tolua.bat to generate Lua bindings.
 
