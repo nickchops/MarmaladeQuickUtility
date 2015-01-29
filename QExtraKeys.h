@@ -2,6 +2,9 @@
  * Additional key codes from C++ Marmalade SDK, that are missing from
  * quick/include/QEvbentX.h
  * This just ads them to the existing Lua "keys" table
+ * largely these are the same as the C++ s3eKey equivalents, with the
+ * "s3eKey" prefix trimmed off and first letter switched to lower-case.
+ * Acronyms have retianed all-upper-case for readability (eg LSK, CLR).
  * You can always refer to any C++ s3eKeyboard key codes with raw numbers
  * anyway, but nice to have these easily available to Quick!
  */
@@ -15,6 +18,20 @@
 namespace key {
     enum
     {
+        RSK = 72,           //!< Right soft key.
+        LSK = 73,           //!< Left soft key.
+        ok = 78,            //!< Select/OK key.
+        CLR = 79,           //!< CLR/clear key.
+        
+        button1 = 89,       //!< Generic Button1.
+        button2 = 90,       //!< Generic Button2.
+        button3 = 91,       //!< Generic Button3.
+        button4 = 92,       //!< Generic Button4.
+        button5 = 93,       //!< Generic Button5.
+        button6 = 94,       //!< Generic Button6.
+        button7 = 95,       //!< Generic Button7.
+        button8 = 96,       //!< Generic Button8.
+        
         search = 128,       //!< Search key
         threeDMode = 129,   //!< 3D Mode key - note naming change from C++ version due to starting with a number!
         myApps = 130,       //!< My Apps key
